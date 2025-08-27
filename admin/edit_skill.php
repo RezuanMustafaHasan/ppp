@@ -34,7 +34,7 @@ if (!$skill) {
 <body>
     <?php include 'nav.php'; ?>
     <main class="content">
-        <section class="card">
+        <section class="card" style="width:33%; margin: auto;">
             <h1>Edit Skill</h1>
             <form action="actions.php" method="post">
                 <input type="hidden" name="action" value="update_skill">
