@@ -1,8 +1,7 @@
 <?php
-// Initialize the session and check authentication
 require_once 'auth_check.php';
+require_once '../inc/config.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +11,7 @@ require_once 'auth_check.php';
     <link rel="stylesheet" href="style.css">
     <style>
         body { display: block; }
-        .dashboard-header { background-color: var(--card); padding: 15px 30px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-        .dashboard-header h1 { margin: 0; font-size: 22px; }
         .dashboard-container { padding: 30px; }
-        .logout-btn { display: inline-block; padding: 8px 15px; background-color: var(--primary); color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: background-color 0.2s; }
-        .logout-btn:hover { background-color: var(--primary-hover); }
         .create-btn { display: inline-block; margin-bottom: 20px; padding: 10px 18px; background-color: #28a745; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; }
         .create-btn:hover { background-color: #218838; }
         table { width: 100%; border-collapse: collapse; background: var(--card); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
@@ -28,16 +23,9 @@ require_once 'auth_check.php';
     </style>
 </head>
 <body>
-    <?php require_once '../inc/config.php'; ?>
-    <header class="dashboard-header">
-        <h1>Manage Blogs</h1>
-        <div>
-            <span style="margin-right: 15px;">Welcome, <strong><?php echo htmlspecialchars($_SESSION["admin_username"]); ?></strong>!</span>
-            <a href="logout.php" class="logout-btn">Logout</a>
-        </div>
-    </header>
-
+    <?php include 'nav.php'; ?>
     <main class="dashboard-container">
+        <h1>Manage Blogs</h1>
         <a href="create.php" class="create-btn">Create New Post</a>
         <table>
             <thead>

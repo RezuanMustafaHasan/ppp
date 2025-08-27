@@ -28,7 +28,6 @@ if ($stmt = $conn->prepare($sql)) {
     $stmt->close();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,18 +37,14 @@ if ($stmt = $conn->prepare($sql)) {
     <link rel="stylesheet" href="style.css">
     <style>
         body { display: block; }
-        .dashboard-header { background-color: var(--card); padding: 15px 30px; border-bottom: 1px solid var(--border); }
-        .dashboard-header h1 { margin: 0; font-size: 22px; }
         .form-container { max-width: 800px; margin: 30px auto; padding: 30px; background: var(--card); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         textarea { min-height: 250px; resize: vertical; }
     </style>
 </head>
 <body>
-    <header class="dashboard-header">
-        <h1>Edit Post</h1>
-    </header>
-
+    <?php include 'nav.php'; ?>
     <main class="form-container">
+        <h1>Edit Post</h1>
         <form action="actions.php" method="post">
             <input type="hidden" name="action" value="update">
             <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
