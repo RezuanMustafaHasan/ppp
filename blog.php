@@ -15,7 +15,7 @@
   ?>
   <article class="blog-card">
     <?php if (!empty($row["image_url"])): ?>
-      <img src="<?= htmlspecialchars($row["image_url"]) ?>" alt="<?= htmlspecialchars($row["title"]) ?> post image" class="blog-card-img">
+      <img src="<?= $row["image_url"] ?>" alt="<?= htmlspecialchars($row["title"]) ?> post image" class="blog-card-img">
     <?php endif; ?>
     <div class="blog-card-content">
       <h3><a href="#"><?= htmlspecialchars($row["title"]) ?></a></h3>
