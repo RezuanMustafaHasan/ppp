@@ -26,17 +26,27 @@ if (!$skill) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Skill</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body { display: block; }
+        .content { padding: 30px; }
+    </style>
 </head>
 <body>
     <?php include 'nav.php'; ?>
     <main class="content">
-        <h1>Edit Skill</h1>
         <section class="card">
+            <h1>Edit Skill</h1>
             <form action="actions.php" method="post">
                 <input type="hidden" name="action" value="update_skill">
                 <input type="hidden" name="id" value="<?= $id ?>">
-                <label>Skill Name: <input type="text" name="name" value="<?= htmlspecialchars($skill['name']) ?>" required></label>
-                <label>Category: <input type="text" name="category" value="<?= htmlspecialchars($skill['category']) ?>" required></label>
+                <div class="form-group">
+                    <label for="name">Skill Name</label>
+                    <input type="text" id="name" name="name" value="<?= htmlspecialchars($skill['name']) ?>" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input type="text" id="category" name="category" value="<?= htmlspecialchars($skill['category']) ?>" required>
+                </div>
                 <button type="submit" class="btn">Update Skill</button>
             </form>
         </section>
