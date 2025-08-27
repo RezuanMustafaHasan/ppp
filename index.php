@@ -1,8 +1,4 @@
-<?php
-require_once __DIR__ . '/inc/config.php';
-require_once __DIR__ . '/inc/github.php';
-$repos = github_repos($PROFILE["github_user"]);
-?>
+
 <?php include __DIR__ . '/inc/head.php'; ?>
 
 <section id="about" class="grid two card">
@@ -41,7 +37,8 @@ $repos = github_repos($PROFILE["github_user"]);
 <section id="projects" class="card">
   <h2>Projects</h2>
   <div class="projects">
-    <?php foreach ($repos as $r): ?>
+    <!-- <?//php foreach ($repos as $r): ?> -->
+    <?php foreach ($PROJECT_FALLBACKS as $r): ?>
       <a class="project" href="<?= htmlspecialchars($r["html_url"]) ?>" target="_blank" rel="noopener">
         <div class="project-head">
           <h3><?= htmlspecialchars($r["name"]) ?></h3>

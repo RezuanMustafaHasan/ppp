@@ -43,8 +43,9 @@
         <small>Algorithm problems solved</small>
       </div>
       <div class="stat">
-        <span>3.53</span>
-        <small>Last Semester GPA</small>
+        <span>3.42</span>
+        <small>CGPA</small>
       </div>
     </div>
   </section>
+

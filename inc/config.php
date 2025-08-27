@@ -13,6 +13,7 @@ $PROFILE = [
   "resume_path" => "assets/cv.pdf"
 ];
 
+
 // ---------- Skills (edit to taste) ----------
 $SKILLS = [
   "Languages" => ["C", "C++", "C#", "Java", "Python", "JavaScript"],
@@ -57,3 +58,4 @@ $PROJECT_FALLBACKS = [
     "updated_at" => "2025-01-01T00:00:00Z"
   ]
 ];
+?>
