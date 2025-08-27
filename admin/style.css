@@ -209,21 +209,29 @@ tr:hover {
   background-color: #c82333;
 }
 
-form {
+.form-inline {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-form label {
+.form-inline label {
     margin-bottom: 0;
 }
 
-form input[type="text"] {
+.form-inline input[type="text"] {
     width: auto;
     flex-grow: 1;
 }
 
-form .btn {
+.form-inline .btn {
     width: auto;
+}
+
+.form-vertical .form-group {
+    margin-bottom: 15px;
+}
+
+.form-vertical .btn {
+    margin-top: 10px;
 }

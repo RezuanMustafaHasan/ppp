@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     <!-- Add Skill Form -->
     <section class="card">
         <h2>Add New Skill</h2>
-        <form action="actions.php" method="post">
+        <form action="actions.php" method="post" class="form-inline">
             <input type="hidden" name="action" value="add_skill">
             <label for="name">Skill Name:</label>
             <input type="text" id="name" name="name" required>
